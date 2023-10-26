@@ -7,6 +7,7 @@ namespace projeto.Controllers
 {
     public class ItemController : Controller
     {
+    
         private readonly IItemRepository _itemRespository;
         public ItemController(IItemRepository itemRespository)
         {

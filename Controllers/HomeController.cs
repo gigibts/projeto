@@ -6,7 +6,7 @@ using projeto.ViewModel;
 
 namespace projeto.Controllers;
 
-public class HomeController : Controller
+   public class HomeController : Controller
 {
     private readonly IItemRepository _itemRepository;
 
