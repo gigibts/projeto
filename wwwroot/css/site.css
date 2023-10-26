@@ -17,6 +17,13 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
+
+
+.corlaranja{
+  background-color: #E59722;
+  color: black;
+}
+
+a{
+  text-decoration: none;
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\projeto\\projeto.csproj": {}
+    "C:\\DEV\\projeto\\projeto.csproj": {}
   },
   "projects": {
-    "C:\\dev\\projeto\\projeto.csproj": {
+    "C:\\DEV\\projeto\\projeto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\projeto\\projeto.csproj",
+        "projectUniqueName": "C:\\DEV\\projeto\\projeto.csproj",
         "projectName": "projeto",
-        "projectPath": "C:\\dev\\projeto\\projeto.csproj",
+        "projectPath": "C:\\DEV\\projeto\\projeto.csproj",
         "packagesPath": "C:\\Users\\Aluno Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\projeto\\obj\\",
+        "outputPath": "C:\\DEV\\projeto\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Aluno Dev\\AppData\\Roaming\\NuGet\\NuGet.Config"

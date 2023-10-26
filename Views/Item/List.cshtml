@@ -2,12 +2,11 @@
 @{
     ViewData["Title"] = "Cardapio";
 }
-<h1>@Model.CategoriaAtual</h1>
-<div class="container">
-    <div class="row">
+<h2>@Model.CategoriaAtual</h2>
+
+    <div class="row row-cols-1 row-cols-sm-3" style="min-height:50vh">
         @foreach (var item in Model.Itens)
         {
             <partial name="_Card" for="@item"></partial>
         }
     </div>
-</div>
