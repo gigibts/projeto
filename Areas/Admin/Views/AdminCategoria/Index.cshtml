@@ -1,14 +1,24 @@
-@model IEnumerable<projeto.Models.Categoria>
+@model ReflectionIT.Mvc.Paging.PagingList<projeto.Models.Categoria>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Categoria";
 }
 
 <h3>Categoria</h3>
 
-<p>
-    <a class=" btn corlaranja link-dark" asp-action="Create">Criar nova Categoria</a>
-</p>
+<form method="get" class="d-flex flex-column">
+  <div class="col col-sm-6">
+  <input name="filtro" class="form-control" placeholder="Digite o item" value="@Model.RouteValue["Filtro"]" />
+  </div>
+  <div class="col my-3">
+  <button type="submit" class="btn btn-dark">Procurar</button>
+  </div>
+</form>
+<div class="my-3">
+Total de Itens Cadastrados: @Model.TotalRecordCount
+</div>
+
+<p><a class=" btn corlaranja link-dark" asp-action="Create">Criar nova Categoria</a></p>
 
 <table class="table">
     <thead>
@@ -20,19 +30,24 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <div class="d-flex">
+        @foreach (var item in Model)
+        {
+            <tr>
                 <td>
-                    <a class="btn corlaranja" asp-action="Edit" asp-route-id="@item.CategoriaId">Editar</a> |
-                    <a class="btn corlaranja" asp-action="Details" asp-route-id="@item.CategoriaId">Detalhar</a> |
-                    <a class="btn corlaranja" asp-action="Delete" asp-route-id="@item.CategoriaId">Deletar</a>
+                    @Html.DisplayFor(modelItem => item.Nome)
                 </td>
-            </div>
-        </tr>
-}
+                <div class="d-flex">
+                    <td>
+                        <a class="btn corlaranja" asp-action="Edit" asp-route-id="@item.CategoriaId">Editar</a> |
+                        <a class="btn corlaranja" asp-action="Details" asp-route-id="@item.CategoriaId">Detalhar</a> |
+                        <a class="btn corlaranja" asp-action="Delete" asp-route-id="@item.CategoriaId">Deletar</a>
+                    </td>
+                </div>
+            </tr>
+        }
     </tbody>
 </table>
+
+<div class="my-3">
+  <vc:pager paging-list="@Model"></vc:pager>
+</div>

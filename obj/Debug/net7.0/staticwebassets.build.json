@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VfsMfy3aaxPF/ulcd0zBkWj4O3NXfAi1jrijRjpzsow=",
+  "Hash": "TtwGhaM5nXUwsH2Gl1NLQnZL8jZykkxI8zU7nlBxhQM=",
   "Source": "projeto",
   "BasePath": "_content/projeto",
   "Mode": "Default",
@@ -134,6 +134,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imagens\\imagem3.jpg"
+    },
+    {
+      "Identity": "C:\\DEV\\projeto\\wwwroot\\imagens\\item\\0174c172-8d6e-4273-a251-c3f2d155c334..jpg",
+      "SourceId": "projeto",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DEV\\projeto\\wwwroot\\",
+      "BasePath": "_content/projeto",
+      "RelativePath": "imagens/item/0174c172-8d6e-4273-a251-c3f2d155c334..jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagens\\item\\0174c172-8d6e-4273-a251-c3f2d155c334..jpg"
+    },
+    {
+      "Identity": "C:\\DEV\\projeto\\wwwroot\\imagens\\item\\f5b6fd21-7567-4dd6-8e6d-648a08c092a4..jpg",
+      "SourceId": "projeto",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DEV\\projeto\\wwwroot\\",
+      "BasePath": "_content/projeto",
+      "RelativePath": "imagens/item/f5b6fd21-7567-4dd6-8e6d-648a08c092a4..jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagens\\item\\f5b6fd21-7567-4dd6-8e6d-648a08c092a4..jpg"
     },
     {
       "Identity": "C:\\DEV\\projeto\\wwwroot\\imagens\\lanche1.jpg",
@@ -1154,6 +1188,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\DEV\\projeto\\wwwroot\\xml\\Pedido.xml",
+      "SourceId": "projeto",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DEV\\projeto\\wwwroot\\",
+      "BasePath": "_content/projeto",
+      "RelativePath": "xml/Pedido.xml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\xml\\Pedido.xml"
+    },
+    {
+      "Identity": "C:\\DEV\\projeto\\wwwroot\\xml\\Pedidos.xml",
+      "SourceId": "projeto",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DEV\\projeto\\wwwroot\\",
+      "BasePath": "_content/projeto",
+      "RelativePath": "xml/Pedidos.xml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\xml\\Pedidos.xml"
     }
   ]
 }

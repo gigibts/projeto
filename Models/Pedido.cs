@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using projeto.Areas.Admin.Controllers;
 
 namespace projeto.Models
 {
@@ -55,5 +56,6 @@ namespace projeto.Models
         ApplyFormatInEditMode = true)]
         public DateTime PedidoEnviadoEm { get; set; }
         public List<PedidoItem> PedidoItens { get; set; }
+        
     }
 }

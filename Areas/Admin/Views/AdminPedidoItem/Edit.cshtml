@@ -1,0 +1,41 @@
+@model projeto.Models.PedidoItem
+
+<h3 class="text-center">Editar Pedido Item</h3>
+<hr />
+<div class="row d-flex justify-content-center">
+    <div class="col col-sm-8">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PedidoItemId" />
+            <div class="form-group">
+                <label asp-for="PedidoId" class="control-label"></label>
+                <select asp-for="PedidoId" class="form-control" asp-items="ViewBag.PedidoId"></select>
+                <span asp-validation-for="PedidoId" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="ItemId" class="control-label"></label>
+                <select asp-for="ItemId" class="form-control" asp-items="ViewBag.ItemId"></select>
+                <span asp-validation-for="ItemId" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Quantidade" class="control-label"></label>
+                <input asp-for="Quantidade" class="form-control" />
+                <span asp-validation-for="Quantidade" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label class="control-label">Preço</label>
+                <input asp-for="Preco" class="form-control" />
+                <span asp-validation-for="Preco" class="text-danger"></span>
+            </div>
+            <div class="d-flex mt-3">
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn corlaranja" /> |&nbsp;
+            </div>
+            <div>
+                <a class="btn corlaranja" asp-action="Index">voltar</a>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+

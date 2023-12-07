@@ -10,6 +10,7 @@ namespace projeto.Models
         public int Quantidade { get; set; }
         [Column(TypeName = "decimal(18,2)")]
         public decimal Preco { get; set; }
+       
         public virtual Item Item { get; set; }
         public virtual Pedido Pedido { get; set; }
     }

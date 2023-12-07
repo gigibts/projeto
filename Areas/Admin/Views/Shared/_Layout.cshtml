@@ -1,5 +1,21 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@{
+    switch(ViewData["Title"]){
+        case "Categoria" : ViewData["Categoria"] = "text-white";
+        break;
+        case "Item" : ViewData["Item"] = "text-white";
+        break;
+        case "Pedidos" : ViewData["Pedidos"] = "text-white";
+        break;
+        case "Relatorio" : ViewData["Relatorio"] = "text-white";
+        break;
+        case "Exportar" : ViewData["Exportar"] = "text-white";
+        break;
+    }
+
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8" />
@@ -12,25 +28,39 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light corlaranja  border-bottom box-shadow mb-3">
+        <nav
+            class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light corlaranja  border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/imagens/logo1.png"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img
+                        src="~/imagens/logo1.png"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link @ViewData["Home"]" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="AdminCategoria"
+                            <a class="nav-link @ViewData["Categoria"]" asp-area="Admin" asp-controller="AdminCategoria"
                                 asp-action="Index">Categoria</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="AdminItem"
+                            <a class="nav-link @ViewData["Item"]" asp-area="Admin" asp-controller="AdminItem"
                                 asp-action="Index">Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @ViewData["Relatorio"]" asp- area="Admin" asp-controller="AdminRelatorioVendas" asp-
+                                action="Index">Relatório de Vendas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @ViewData["Exportar"]" asp-area="Admin" asp-controller="AdminXml"
+                                asp-action="Index">Exportar xml</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @ViewData["Pedidos"]" asp- area="Admin" asp-controller="AdminPedido"
+                                asp-action="Index">Pedidos</a>
                         </li>
                         <li>
                             @await Html.PartialAsync("_Login")

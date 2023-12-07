@@ -1,0 +1,58 @@
+@model projeto.ViewModel.PedidoItensViewModel
+@{
+    ViewData["Title"] = "Pedidos";
+    decimal totalPedido = 0;
+}
+<h3>Lanches do Pedido</h3>
+<hr/>
+
+   <div class="row">
+        <div class="col">
+            <div>Nº do Pedido: @Html.DisplayFor(model => @Model.Pedidos.PedidoId) </div>
+            <div>Cliente: @Html.DisplayFor(model => @Model.Pedidos.Nome)</div>
+             <div>Data do Pedido: @Html.DisplayFor(model =>
+    @Model.Pedidos.PedidoEnviado)</div>
+             <div>Entrega: @Html.DisplayFor(model =>
+    @Model.Pedidos.PedidoEnviadoEm)</div>
+        </div>
+    </div>
+
+     <div class="h3 mt-3"> Itens do pedido </div>
+
+
+    @foreach (var item in @Model.Pedidos.PedidoItens)
+    {
+       totalPedido += (Convert.ToDecimal(@item.Item.Preco) *
+        @item.Quantidade);
+
+    
+        <div class="row">
+        <div class="col-12 col-sm-4">
+            <img src="@item.Item.ImagemUrl" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-8">
+            <h3>@Html.DisplayFor(modelItem => item.Item.Nome)</h3>
+            <h3>@string.Format("{0:C}", item.Item.Preco)</h3>
+            <h3>(@Html.DisplayFor(modelItem => item.Quantidade))</h3>
+        </div>
+        </div>
+
+
+         <div class="gap-3 d-flex my-3">
+            <a class="btn corlaranja" asp-controller="AdminPedidoItem" asp-action="Edit" asp-route-id="@item.PedidoItemId">Editar</a>
+
+                <a class="btn corlaranja" asp-controller="AdminPedidoItem" asp-action="Delete" asp-route-id="@item.PedidoItemId">Deletar</a>
+         </div>
+  
+    }
+ 
+    <div class="ms-2 row h5 text-success">
+                Total do Pedido : @string.Format("{0:C}",
+                @totalPedido)
+    </div>
+  
+<div class="my-3 d-flex gap-3">
+<a asp-action="Index" class="btn btn-outline-dark">Retornar</a>
+<a asp-controller="AdminPedidoItem" asp-action="Create" asp-route-pedidoId="@Model.Pedidos.PedidoId" class="btn btn-outline-dark">Adicionar mais itens</a>
+</div>
+

@@ -1,0 +1,55 @@
+@model IEnumerable<projeto.Models.PedidoItem>
+<h3>Itens do Pedido</h3>
+
+
+    <p>
+        <a class=" btn corlaranja link-dark" 
+        asp-action="Create">Criar novo Item</a>
+    </p>
+<div class="table-responsive">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pedido)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.DescricaoCurta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pedido.Cep)
+            </td>
+           
+                    <td>
+                         <div class="d-flex gap-3">
+                        <a class="btn corlaranja" asp-action="Edit" asp-route-id="@item.PedidoItemId">Editar</a> |
+                        <a class="btn corlaranja" asp-action="Details" asp-route-id="@item.PedidoItemId">Detalhar</a> |
+                        <a class="btn corlaranja" asp-action="Delete" asp-route-id="@item.PedidoItemId">Deletar</a>
+                        </div>
+                    </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

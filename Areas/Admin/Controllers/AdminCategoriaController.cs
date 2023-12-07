@@ -8,10 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using projeto.Context;
 using projeto.Models;
+using ReflectionIT.Mvc.Paging;
 
 namespace projeto.Areas.Admin.Controllers
 {
-  [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     public class AdminCategoriaController : Controller
     {
@@ -23,11 +24,25 @@ namespace projeto.Areas.Admin.Controllers
         }
 
         // GET: Admin/AdminCategoria
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string filtro, int pageindex = 1,
+string sort = "Nome")
         {
-              return _context.Categorias != null ? 
-                          View(await _context.Categorias.ToListAsync()) :
-                          Problem("Entity set 'AppDbContext.Categorias'  is null.");
+            var categorialist =
+
+            _context.Categorias.AsNoTracking().AsQueryable();
+
+            if (filtro != null)
+            {
+                categorialist = categorialist.Where(p => p.Nome.ToLower().Contains(filtro.ToLower()));
+
+            }
+            var model = await PagingList.CreateAsync(categorialist, 5, pageindex, sort, "Nome");
+
+            model.RouteValue = new RouteValueDictionary{{"filtro", filtro
+
+}};
+
+            return View(model);
         }
 
         // GET: Admin/AdminCategoria/Details/5
@@ -153,14 +168,14 @@ namespace projeto.Areas.Admin.Controllers
             {
                 _context.Categorias.Remove(categoria);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool CategoriaExists(int id)
         {
-          return (_context.Categorias?.Any(e => e.CategoriaId == id)).GetValueOrDefault();
+            return (_context.Categorias?.Any(e => e.CategoriaId == id)).GetValueOrDefault();
         }
     }
 }
